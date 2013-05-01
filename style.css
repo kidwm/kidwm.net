@@ -1,0 +1,7 @@
+.avatar {
+	margin-top: 100px;
+	text-align: center;
+}
+.avatar img {
+	border-radius: 50%;
+}
