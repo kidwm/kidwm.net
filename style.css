@@ -1,6 +1,19 @@
+body {
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+body::before {
+    content: ' ';
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
+}
+
 .avatar {
-	margin: 100px auto;
-	text-align: center;
+	display: inline-block;
+    vertical-align: middle;
 	position: relative;
 	padding: 40px;
 	width: 80px;
