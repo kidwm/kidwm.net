@@ -1,0 +1,9 @@
+{
+  "name": "kidwm.net",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-csslint": "~0.1.2"
+  }
+}
