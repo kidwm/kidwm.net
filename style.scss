@@ -18,8 +18,8 @@ body::before {
 	display: inline-block;
     vertical-align: middle;
 	position: relative;
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 }
 .avatar img {
 	border-radius: 50%;
@@ -32,6 +32,7 @@ body::before {
     vertical-align: middle;
     text-align: left;
     line-height: 1.8em;
+    font-size: 1.3em;
     li {
         text-align: left;
     }

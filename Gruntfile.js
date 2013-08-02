@@ -26,7 +26,11 @@ module.exports = function(grunt) {
             },
         },
         connect: {
-            uses_defaults: {}
+            server: {
+                options: {
+                    hostname: '*'
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
