@@ -16,14 +16,27 @@ module.exports = function(grunt) {
                 src: ['style.css']
             }
         },
+        coffee: {
+            compile: {
+                files: {
+                    'script.js': 'script.coffee'
+                }
+            }
+        },
         watch: {
-            livereload: {
-                files: ['*.scss'],
-                tasks: ['sass'],
+            concurrent: {
+                files: ['*.scss', '*.coffee'],
+                tasks: ['concurrent'],
                 options: {
                     livereload: true
-                },
+                }
             },
+            livereload: {
+                files: ['*.html'],
+                options: {
+                    livereload: true
+                }
+            }
         },
         connect: {
             server: {
@@ -31,11 +44,36 @@ module.exports = function(grunt) {
                     hostname: '*'
                 }
             }
+        },
+        imagemin: {
+            dist: {
+                options: {
+                    optimizationLevel: 3
+                },
+                files: {
+                    'texture.png': 'texture.png'
+                }
+            }
+        },
+        cssmin: {
+            minify: {
+                files: {
+                    'style.css': 'style.css'
+                }
+            }
+        },
+        concurrent: {
+            build: ['coffee', 'sass']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-concurrent');
     grunt.registerTask('default', ['connect', 'watch']);
+    grunt.registerTask('build', ['imagemin', 'cssmin', 'csslint']);
 };
