@@ -4,7 +4,9 @@ body {
   text-align: center;
   background-color: #113285;
   background-image: url("texture.png");
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  font-display: optional;
+}
 
 body::before {
   content: ' ';
