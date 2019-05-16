@@ -1,40 +1,67 @@
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   text-align: center;
-  background-color: #113285;
-  background-image: url("texture.png");
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
   font-family: 'Lato', sans-serif;
-  font-display: optional;
+  font-size: 1.8em;
+  display: grid;
+  align-content: center;
 }
-
-body::before {
-  content: ' ';
-  display: inline-block;
-  height: 100vh;
-  vertical-align: middle; }
 
 .avatar {
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  width: 120px;
-  height: 120px; }
+}
 
 .avatar img {
   border-radius: 50%;
-  box-shadow: 0 0 10px #1c1c1c; }
+  box-shadow: 0 0 10px #1c1c1c;
+  width: 180px;
+  height: 180px;
+}
 
-.link {
+.links {
   list-style-type: none;
   display: inline-block;
   vertical-align: middle;
-  text-align: left;
+  padding: 0;
   line-height: 1.8em;
-  font-size: 1.3em; }
-  .link li {
-    text-align: left; }
-  .link a {
+}
+
+.links li {
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.links a {
     text-decoration: none;
     color: #FCFAF2;
     text-shadow: 2px 2px 5px #1c1c1c; }
+
+@media (min-width: 720px) {
+    body {
+        display: block;
+    }
+    body::before {
+      content: ' ';
+      display: inline-block;
+      height: 100vh;
+      vertical-align: middle;
+    }
+    .avatar {
+        margin-right: 1em;
+    }
+    .links li {
+        text-align: left;
+    }
+}
